@@ -4,7 +4,7 @@ menu.py is an ordering system from a food truck menu that keeps track of a custo
 # Location of GIT repository
 [https://github.com/mattledevs/python-challenge-1](https://github.com/mattledevs/python-challenge-1)
 
-# Function of Code
+# Function of menu.py
 A food menu will be printed for the customer. Customers will be able to place an order, which includes storing the customer's order and printing the receipt with the total price of all items ordered.
 
 ## Order System
