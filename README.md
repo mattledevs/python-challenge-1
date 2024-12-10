@@ -1,8 +1,8 @@
 # Background
-menu.py is an ordering system from a food truck menu.
+menu.py is an ordering system from a food truck menu that keeps track of a customer's order and at end, prints everything on the order as well as the grand total. 
 
 # Location of GIT repository
-[python-challenge-1]https://github.com/mattledevs/python-challenge-1
+[https://github.com/mattledevs/python-challenge-1](https://github.com/mattledevs/python-challenge-1)
 
 # Function of Code
 A food menu will be printed for the customer. Customers will be able to place an order, which includes storing the customer's order and printing the receipt with the total price of all items ordered.
