@@ -32,3 +32,6 @@ Inside the continuous while loop that prompts the customer if they would like to
 Inside the loop of the customer order, the value of each key will be saved as their own variable: item_name, price, and quantity as well as adding to a grand total of the item number multipled by its quantity. 
 
 This will all be printed out. 
+
+# Future Work
+Functions can be encapsulted to reconstitute code to work in a modular way to better organize and visualize the order system. A class for the customer order can be created where the order is the object with functions like add_to_order, calculate_total can be summarized.  
