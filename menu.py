@@ -1,5 +1,4 @@
-
-# Menu dictionary
+#Menu dictionary
 menu = {
     "Snacks": {
         "Cookie": .99,
@@ -141,27 +140,30 @@ while place_order:
 
                     # Check if the quantity is a number, default to 1 if not
                     if quantity.isdigit():
-
+                        quantity = int(quantity)
                         # Add the item name, price, and quantity to the order list
                         order_item = {
-                            "Item Name": menu_item,
-                            "Price": value,
+                            "Name": menu_item["Item name"],
+                            "Price": menu_item["Price"],
                             "Quantity": quantity
                         }
-                        
-                        menu_selection.append(order_item)
-                        print(order_item)
-                        print(f"{quantity} {menu_item["Item name"]}(s) was added to your order.")
 
-                        print(f"So far, this is everything you're ordering {menu_selection}") 
+                        menu_selection.append(order_item)
+                        
+                        print(f'You added {order_item['Quantity'] } {order_item['Name']}(s) to your order.')
+
+                        print(f"So far, this is everything on your order:") 
+
+                        for item in menu_selection:
+                            print(f"({item['Quantity']}) {item["Name"]}(s) - ${item["Price"]}/each")
 
                     # Tell the customer that their input isn't valid
                     else:
-                        print("That's not a valid quantity. Please enter a number: ")
+                        print("That's not a valid quantity.")
 
                 # Tell the customer they didn't select a menu option
                 else:
-                    print("That's not a value menu option. Please enter the number of your selection: ")
+                    print("That's not a valid menu option. Please enter the number of your selection: ")
 
         else:
             # Tell the customer they didn't select a menu option
@@ -206,21 +208,26 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
+#Set the grand customer total to 0
+grand_total = 0
+
 for item in menu_selection:
 
     # 7. Store the dictionary items as variables
-    item_name = item["Item Mame"]["Item name"]
+    item_name = item['Name']
+    price = item['Price']
+    quantity = item['Quantity']
 
-    # 8. Calculate the number of spaces for formatted printing
-    price = sum(item["Price"])
+    # 8. Calculate the total price for the item and sum each item to the grand total
+    item_total = price * quantity
+    grand_total += item_total
 
     # 9. Create space strings
-    item_spaces = '' * (24 - len(item_name))
+    item_spaces = ' ' * (25 - len(item_name))
 
     # 10. Print the item name, price, and quantity
-    print(f"{item_name} | {price} | {item}["Quantity"]")
+    print(f"{item_name}{item_spaces} | ${price}  | {quantity}")
 
 
 # 11. Calculate the cost of the order using list comprehension
-# Multiply the price by quantity for each item in the order list, then sum()
-# and print the prices.
+print(f"Your grand total is ${grand_total:.2f}")
